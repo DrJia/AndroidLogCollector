@@ -36,6 +36,7 @@ public class UploadLogManager {
 		mHandlerThread = new HandlerThread(TAG + ":HandlerThread");
 		mHandlerThread.start();
 		
+		
 	}
 
 	public static synchronized UploadLogManager getInstance(Context c){
