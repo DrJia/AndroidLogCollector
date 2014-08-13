@@ -34,6 +34,24 @@ public class LogFileStorage {
 		}
 		return sInstance;
 	}
+	
+	public File getUploadLogFile(){
+		File dir = mContext.getFilesDir();
+		File logFile = new File(dir, LogCollectorUtility.getMid(mContext)
+				+ LOG_SUFFIX);
+		if(logFile.exists()){
+			return logFile;
+		}else{
+			return null;
+		}
+	}
+	
+	public boolean deleteUploadLogFile(){
+		File dir = mContext.getFilesDir();
+		File logFile = new File(dir, LogCollectorUtility.getMid(mContext)
+				+ LOG_SUFFIX);
+		return logFile.delete();
+	}
 
 	public boolean saveLogFile2Internal(String logString) {
 		try {
