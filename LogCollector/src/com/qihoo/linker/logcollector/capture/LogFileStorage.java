@@ -1,7 +1,9 @@
-package com.qihoo.linker.logcollector;
+package com.qihoo.linker.logcollector.capture;
 
 import java.io.File;
 import java.io.FileOutputStream;
+
+import com.qihoo.linker.logcollector.utils.LogCollectorUtility;
 
 import android.content.Context;
 import android.util.Log;

@@ -1,9 +1,11 @@
-package com.qihoo.linker.logcollector;
+package com.qihoo.linker.logcollector.capture;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.Thread.UncaughtExceptionHandler;
+
+import com.qihoo.linker.logcollector.utils.LogCollectorUtility;
 
 import android.content.Context;
 import android.os.Build;
