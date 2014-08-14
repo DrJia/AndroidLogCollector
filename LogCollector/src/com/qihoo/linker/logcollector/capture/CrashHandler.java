@@ -98,7 +98,8 @@ public class CrashHandler implements UncaughtExceptionHandler {
 		StringBuilder sb = new StringBuilder();
 		String logTime = "logTime:" + LogCollectorUtility.getCurrentTime();
 		
-		String exception = "exception:" + ex.getCause();
+		String exception = "exception:" + ex.toString();
+		
 		Writer info = new StringWriter();
 		PrintWriter printWriter = new PrintWriter(info);
 		ex.printStackTrace(printWriter);
