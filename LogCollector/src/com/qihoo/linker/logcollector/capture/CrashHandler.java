@@ -125,10 +125,14 @@ public class CrashHandler implements UncaughtExceptionHandler {
 		Writer info = new StringWriter();
 		PrintWriter printWriter = new PrintWriter(info);
 		ex.printStackTrace(printWriter);
-		String crashDump = "crashDump:" + "{" + info.toString() + "}";
-		printWriter.close();
+		
+		String dump = info.toString();
 		String crashMD5 = "crashMD5:"
-				+ LogCollectorUtility.getMD5Str(crashDump);
+				+ LogCollectorUtility.getMD5Str(dump);
+		
+		String crashDump = "crashDump:" + "{" + dump + "}";
+		printWriter.close();
+		
 
 		sb.append("&start---").append(lineSeparator);
 		sb.append(logTime).append(lineSeparator);
@@ -167,6 +171,10 @@ public class CrashHandler implements UncaughtExceptionHandler {
 		ex.printStackTrace(printWriter);
 
 		String dump = info.toString();
+		
+		String crashMD5 = "crashMD5:"
+				+ LogCollectorUtility.getMD5Str(dump);
+		
 		try {
 			dump = URLEncoder.encode(dump, CHARSET);
 		} catch (UnsupportedEncodingException e) {
@@ -175,8 +183,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 		}
 		String crashDump = "crashDump:" + "{" + dump + "}";
 		printWriter.close();
-		String crashMD5 = "crashMD5:"
-				+ LogCollectorUtility.getMD5Str(crashDump);
+		
 
 		sb.append("&start---").append(lineSeparator);
 		sb.append(logTime).append(lineSeparator);
