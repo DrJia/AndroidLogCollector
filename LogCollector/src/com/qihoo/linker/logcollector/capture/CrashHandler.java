@@ -16,6 +16,11 @@ import android.os.Build;
 import android.os.Process;
 import android.util.Base64;
 
+/**
+ * 
+ * @author jiabin
+ *
+ */
 public class CrashHandler implements UncaughtExceptionHandler {
 
 	private static final String TAG = CrashHandler.class.getName();

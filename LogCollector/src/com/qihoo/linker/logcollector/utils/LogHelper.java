@@ -2,6 +2,11 @@ package com.qihoo.linker.logcollector.utils;
 
 import android.util.Log;
 
+/**
+ * 
+ * @author jiabin
+ *
+ */
 public class LogHelper {
 
 	public static boolean enableDefaultLog = false;

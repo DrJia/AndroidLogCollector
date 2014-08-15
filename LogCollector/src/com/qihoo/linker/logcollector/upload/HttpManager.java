@@ -40,6 +40,11 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 import org.apache.http.protocol.HTTP;
 
+/**
+ * 
+ * @author jiabin
+ *
+ */
 public class HttpManager {
 
 	private static final int SET_CONNECTION_TIMEOUT = 5 * 1000;

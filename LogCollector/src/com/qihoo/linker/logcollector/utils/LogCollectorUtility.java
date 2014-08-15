@@ -20,6 +20,11 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
 
+/**
+ * 
+ * @author jiabin
+ *
+ */
 public class LogCollectorUtility {
 	
 	private static final String TAG = LogCollectorUtility.class.getName();

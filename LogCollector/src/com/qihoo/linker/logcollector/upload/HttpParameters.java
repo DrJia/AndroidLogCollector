@@ -4,6 +4,11 @@ import java.util.ArrayList;
 
 import android.text.TextUtils;
 
+/**
+ * 
+ * @author jiabin
+ *
+ */
 public class HttpParameters {
 
 	private ArrayList<String> mKeys = new ArrayList<String>();

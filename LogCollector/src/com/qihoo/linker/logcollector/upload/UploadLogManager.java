@@ -11,6 +11,11 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 
+/**
+ * 
+ * @author jiabin
+ *
+ */
 public class UploadLogManager {
 	
 	private static final String TAG = UploadLogManager.class.getName();

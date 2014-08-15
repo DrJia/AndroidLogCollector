@@ -10,6 +10,11 @@ import com.qihoo.linker.logcollector.utils.Constants;
 import com.qihoo.linker.logcollector.utils.LogCollectorUtility;
 import com.qihoo.linker.logcollector.utils.LogHelper;
 
+/**
+ * 
+ * @author jiabin
+ *
+ */
 public class LogCollector {
 
 private static final String TAG = LogCollector.class.getName();

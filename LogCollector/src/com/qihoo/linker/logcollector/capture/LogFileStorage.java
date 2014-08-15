@@ -9,6 +9,11 @@ import com.qihoo.linker.logcollector.utils.LogHelper;
 import android.content.Context;
 import android.util.Log;
 
+/**
+ * 
+ * @author jiabin
+ *
+ */
 public class LogFileStorage {
 
 	private static final String TAG = LogFileStorage.class.getName();
