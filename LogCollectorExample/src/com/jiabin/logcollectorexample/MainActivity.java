@@ -1,7 +1,6 @@
 package com.jiabin.logcollectorexample;
 
-import com.qihoo.linker.logcollector.upload.HttpParameters;
-import com.qihoo.linker.logcollector.upload.UploadLogManager;
+import com.qihoo.linker.logcollector.LogCollector;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -27,22 +26,27 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		
 	}
+	
+	private void causeCrash(){
+		String s = null;
+		s.split("1");
+	}
+	
+	private void uploadLogFile(){
+		boolean isWifiOnly = true;
+		LogCollector.upload(isWifiOnly);
+	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.button1:
-			String s = null;
-			s.split("1");
+			
+			causeCrash();
 			break;
 		case R.id.button2:
-			String url = "http://www.google.com/";
-			HttpParameters params = new HttpParameters();
-			params.add("id", 1);
-			params.add("name", "DrJ");
 			
-			UploadLogManager.getInstance(getApplicationContext()).uploadLogFile(
-					url, params);
+			uploadLogFile();
 			break;
 
 		default:
