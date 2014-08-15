@@ -63,7 +63,7 @@ public class LogFileStorage {
 		try {
 			File dir = mContext.getFilesDir();
 			if (!dir.exists()) {
-				dir.mkdir();
+				dir.mkdirs();
 			}
 			File logFile = new File(dir, LogCollectorUtility.getMid(mContext)
 					+ LOG_SUFFIX);
@@ -86,14 +86,17 @@ public class LogFileStorage {
 		try {
 			File logDir = getExternalLogDir();
 			if (!logDir.exists()) {
-				logDir.mkdir();
+				logDir.mkdirs();
 			}
+			
 			File logFile = new File(logDir, LogCollectorUtility.getMid(mContext)
 					+ LOG_SUFFIX);
 			/*if (!isAppend) {
 				if (logFile.exists() && !logFile.isFile())
 					logFile.delete();
 			}*/
+			LogHelper.d(TAG, logFile.getPath());
+			
 			FileOutputStream fos = new FileOutputStream(logFile , isAppend);
 			fos.write(logString.getBytes(CHARSET));
 			fos.close();
@@ -106,6 +109,8 @@ public class LogFileStorage {
 	}
 
 	private File getExternalLogDir() {
-		return LogCollectorUtility.getExternalDir(mContext, "Log");
+		File logDir = LogCollectorUtility.getExternalDir(mContext, "Log");
+		LogHelper.d(TAG, logDir.getPath());
+		return logDir;
 	}
 }

@@ -64,8 +64,8 @@ public class LogCollectorUtility {
 	public static File getExternalDir(Context context , String dirName) {
 		final String cacheDir = "/Android/data/" + context.getPackageName()
 				+ "/";
-		return new File(Environment.getExternalStorageDirectory().getPath()
-				+ cacheDir + "/");
+		return new File(Environment.getExternalStorageDirectory().getAbsolutePath()
+				+ cacheDir + dirName + "/");
 	}
 	
 	public static boolean isSDcardExsit() {

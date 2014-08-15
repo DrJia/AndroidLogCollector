@@ -23,7 +23,8 @@ public class MyApplication extends Application {
 		//replace your key and value;
 		
 		boolean isDebug = true;
-		LogCollector.setDebugMode(isDebug);//set debug mode , you can see debug log , and also you can get logfile in sdcard;
+		//set debug mode , you can see debug log , and also you can get logfile in sdcard;
+		LogCollector.setDebugMode(isDebug);
 		LogCollector.init(getApplicationContext(), UPLOAD_URL, params);//params can be null
 	}
 
