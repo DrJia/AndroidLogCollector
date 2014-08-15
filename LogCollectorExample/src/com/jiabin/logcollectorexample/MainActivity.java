@@ -33,8 +33,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 	
 	private void uploadLogFile(){
-		boolean isWifiOnly = true;
-		LogCollector.upload(isWifiOnly);
+		boolean isWifiOnly = true;//only wifi mode can upload
+		LogCollector.upload(isWifiOnly);//upload at the right time
 	}
 
 	@Override
