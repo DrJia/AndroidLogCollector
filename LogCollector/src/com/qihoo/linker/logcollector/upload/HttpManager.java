@@ -68,17 +68,21 @@ public class HttpManager {
 		try {
 			
 			bos = new ByteArrayOutputStream();
-			String key = "";
-			for (int i = 0; i < params.size(); i++) {
-				key = params.getKey(i);
-				StringBuilder temp = new StringBuilder(10);
-				temp.setLength(0);
-				temp.append(MP_BOUNDARY).append(LINEND);
-				temp.append("content-disposition: form-data; name=\"").append(key)
-						.append("\"").append(LINEND + LINEND);
-				temp.append(params.getValue(key)).append(LINEND);
-				bos.write(temp.toString().getBytes());
+			
+			if(params != null){
+				String key = "";
+				for (int i = 0; i < params.size(); i++) {
+					key = params.getKey(i);
+					StringBuilder temp = new StringBuilder(10);
+					temp.setLength(0);
+					temp.append(MP_BOUNDARY).append(LINEND);
+					temp.append("content-disposition: form-data; name=\"").append(key)
+							.append("\"").append(LINEND + LINEND);
+					temp.append(params.getValue(key)).append(LINEND);
+					bos.write(temp.toString().getBytes());
+				}
 			}
+			
 			StringBuilder temp = new StringBuilder();
 			temp.append(MP_BOUNDARY).append(LINEND);
 			temp.append(

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 
 import com.qihoo.linker.logcollector.utils.LogCollectorUtility;
+import com.qihoo.linker.logcollector.utils.LogHelper;
 
 import android.content.Context;
 import android.util.Log;
@@ -26,7 +27,7 @@ public class LogFileStorage {
 
 	public static synchronized LogFileStorage getInstance(Context ctx) {
 		if (ctx == null) {
-			Log.e(TAG, "Context is null");
+			LogHelper.e(TAG, "Context is null");
 			return null;
 		}
 		if (sInstance == null) {
@@ -66,7 +67,7 @@ public class LogFileStorage {
 			fos.close();
 		} catch (Exception e) {
 			e.printStackTrace();
-			Log.e(TAG, "saveLogFile2Internal failed!");
+			LogHelper.e(TAG, "saveLogFile2Internal failed!");
 			return false;
 		}
 		return true;
@@ -74,7 +75,7 @@ public class LogFileStorage {
 
 	public boolean saveLogFile2SDcard(String logString, boolean isAppend) {
 		if (!LogCollectorUtility.isSDcardExsit()) {
-			Log.e(TAG, "sdcard not exist");
+			LogHelper.e(TAG, "sdcard not exist");
 			return false;
 		}
 		try {
