@@ -6,11 +6,23 @@ AndroidLogCollector
 
 ##崩溃日志收集方法：
 
-LogCollector是lib包，在需要添加崩溃日志sdk的工程中导入此包。
+1.LogCollector是lib包，在需要添加崩溃日志sdk的工程中导入此包。
 
-在自己的工程中重写自己的application，在oncreate中加入
+2.导入lib后，在自己的工程的AndroidManifest.xml文件中加入权限：
+
+			<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+			<uses-permission android:name="android.permission.INTERNET"/>
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+3.在自己的工程中重写自己的application，在oncreate中加入
 
 		LogCollector.init(getApplicationContext(), UPLOAD_URL, params);
+		
+PS:重写自己的application记得在Manifest注册
+
 >参数：
 >
 >>1.Context
@@ -65,7 +77,8 @@ LogCollector是lib包，在需要添加崩溃日志sdk的工程中导入此包�
 需要先在application中执行init，
 
 然后在任何位置添加如下代码：
-		LogCollector.upload(isWifiOnly);
+
+		LogCollector.upload(boolean isWifiOnly);
  
 
 >参数：
