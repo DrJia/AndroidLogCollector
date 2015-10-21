@@ -110,6 +110,7 @@ public class HttpManager {
 			
 			ByteArrayEntity formEntity = new ByteArrayEntity(bos.toByteArray());
 			post.setEntity(formEntity);
+			post.setHeader("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
 			HttpResponse response = client.execute(post);
 			StatusLine status = response.getStatusLine();
 			int statusCode = status.getStatusCode();
