@@ -1,10 +1,10 @@
 AndroidLogCollector
 ===================
-###android app崩溃日志收集sdk 1.0
+### android app崩溃日志收集sdk 1.0
 
 作者：贾博士
 
-##崩溃日志收集方法：
+## 崩溃日志收集方法：
 
 1.LogCollector是lib包，在需要添加崩溃日志sdk的工程中导入此包。
 
@@ -72,7 +72,7 @@ PS:重写自己的application记得在Manifest注册
 			}
 		}
 		
-##上传日志方法：
+## 上传日志方法：
 
 需要先在application中执行init，
 
@@ -94,7 +94,7 @@ PS:重写自己的application记得在Manifest注册
 		LogCollector.upload(isWifiOnly);//upload at the right time
 		}
 
-##调试：
+## 调试：
 
 在init之前调用
 
